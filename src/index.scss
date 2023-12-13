@@ -1,0 +1,50 @@
+@import "modern-normalize/modern-normalize.css";
+@import "./common-styles/utils.scss";
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("../public/fonts/Nunito-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $bg-col;
+  color: $text-col;
+  text-align: center;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.p{
+  font-size: $base-fs;
+  line-height: $base-lh;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 16px;
+  @media (min-width: 360px) {
+    max-width: 360px;
+  }
+  @media (min-width: 768px) {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+  @media (min-width: 1024px) {
+    max-width: 1024px;
+    padding: 0 60px;
+  }
+}

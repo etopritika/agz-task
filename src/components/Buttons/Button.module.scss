@@ -1,0 +1,12 @@
+@import "../../common-styles/utils.scss";
+
+.main_button {
+  padding: 4px 23px;
+  font-size: $base-fs;
+  line-height: $base-lh;
+  color: $text-col;
+  background-color: $primary-col;
+  border-radius: 80px;
+  border: none;
+  cursor: pointer;
+}
