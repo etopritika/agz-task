@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getUsers, getToken } from "./userOperations";
+import { getUsers, getToken, postUser } from "./userOperations";
 
 const initialState = {
   users: [],
@@ -42,6 +42,17 @@ const slice = createSlice({
       .addCase(getToken.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.error.message;
+      })
+      .addCase(postUser.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(postUser.fulfilled, (state) => {
+        state.isLoading = false;
+        state.error = null;
+      })
+      .addCase(postUser.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
       });
   },
 });

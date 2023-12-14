@@ -1,6 +1,6 @@
 import React from "react";
 
-function FileUpload({ label, id, name, accept, required }) {
+function FileUpload({ label, id, name, accept, required, onChange }) {
   return (
     <div>
       <label>
@@ -11,6 +11,7 @@ function FileUpload({ label, id, name, accept, required }) {
           name={name}
           accept={accept}
           required={required}
+          onChange={onChange}
         />
       </label>
     </div>
