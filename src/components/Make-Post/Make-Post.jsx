@@ -4,10 +4,12 @@ import RadioButtons from "./components/RadioButtons";
 import FileUpload from "./components/FileUpload";
 import Button from "../Buttons/Button";
 import { useDispatch } from "react-redux";
-import { postUser } from "../../redux/userOperations";
+import { postUser, getToken } from "../../redux/userOperations";
+
 
 function MakePost() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -19,6 +21,7 @@ function MakePost() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    await dispatch(getToken())
     await dispatch(postUser(formData));
   };
 
