@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/agz-task/static/css/main.bb05af9b.css",
+    "main.css": "/agz-task/static/css/main.abd286ea.css",
     "main.js": "/agz-task/static/js/main.8bde3918.js",
-    "static/media/title.jpg": "/agz-task/static/media/title.a32582ba883573716c90.jpg",
+    "static/media/title.avif": "/agz-task/static/media/title.7fc1be54f878bb979e86.avif",
     "static/media/Nunito-Regular.ttf": "/agz-task/static/media/Nunito-Regular.9d7a6e03c6e3ed49c7ac.ttf",
     "static/media/Logo.svg": "/agz-task/static/media/Logo.14b037b2d1788df23763815ec21e6f96.svg",
     "static/media/photo-cover.svg": "/agz-task/static/media/photo-cover.96dd1600a304409a8423aef02a3ebf9a.svg",
     "index.html": "/agz-task/index.html",
-    "main.bb05af9b.css.map": "/agz-task/static/css/main.bb05af9b.css.map",
+    "main.abd286ea.css.map": "/agz-task/static/css/main.abd286ea.css.map",
     "main.8bde3918.js.map": "/agz-task/static/js/main.8bde3918.js.map"
   },
   "entrypoints": [
-    "static/css/main.bb05af9b.css",
+    "static/css/main.abd286ea.css",
     "static/js/main.8bde3918.js"
   ]
 }
