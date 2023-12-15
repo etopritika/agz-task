@@ -15,7 +15,7 @@ function Title() {
           mind. They should also be excited to learn, as the world of Front-End
           Development keeps evolving.
         </p>
-        <Button text={"Sign up"} type={"submit"}/>
+        <Button text={"Sign up"} type={"submit"} location={"#signup"}/>
       </div>
     </section>
   );

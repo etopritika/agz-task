@@ -1,5 +1,9 @@
 @import "../../common-styles/utils.scss";
 
+.picture {
+  border-radius: 70px;
+}
+
 .name {
   margin: 20px 0;
   font-size: $base-fs;

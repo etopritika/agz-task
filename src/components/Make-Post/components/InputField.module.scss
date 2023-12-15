@@ -1,6 +1,8 @@
-.wrapper{
-    margin-bottom: 50px;
-    text-align: start;
+@import "../../../common-styles/utils.scss";
+
+.wrapper {
+  margin-bottom: 50px;
+  text-align: start;
 }
 
 .input_wrapper {
@@ -8,13 +10,14 @@
   padding: 14px 16px;
   border-radius: 4px;
   border: 1px solid #d0cfcf;
+  background-color: $bg-col;
 }
 
-.phone{
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 14px;
-    color: #7E7E7E;
-    margin-left: 16px;
-    margin-top: 4px;
+.phone {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  color: #7e7e7e;
+  margin-left: 16px;
+  margin-top: 4px;
 }

@@ -1,4 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import Notiflix from 'notiflix';
 import { selectToken } from "./selectors";
 
 const URL = "https://frontend-test-assignment-api.abz.agency/api/v1/";
@@ -16,6 +17,8 @@ export const getUsers = createAsyncThunk("users/getUsers", async (page = 1) => {
       "There was a problem with the fetch operation:",
       error.message
     );
+    Notiflix.Notify.failure("There was a problem fetching user data.");
+    throw error;
   }
 });
 
@@ -32,6 +35,8 @@ export const getPositions = createAsyncThunk("users/getPosition", async () => {
       "There was a problem with the fetch operation:",
       error.message
     );
+    Notiflix.Notify.failure("There was a problem fetching positions.");
+    throw error;
   }
 });
 
@@ -50,6 +55,7 @@ export const getToken = createAsyncThunk("users/getToken", async () => {
       "There was a problem with the fetch operation:",
       error.message
     );
+    Notiflix.Notify.failure("There was a problem fetching the token.");
     throw error;
   }
 });
@@ -58,7 +64,7 @@ export const postUser = createAsyncThunk(
   "users/postUser",
   async (data, { getState }) => {
     const token = selectToken(getState());
-
+    
     try {
       const response = await fetch(
         "https://frontend-test-assignment-api.abz.agency/api/v1/users",
@@ -66,7 +72,7 @@ export const postUser = createAsyncThunk(
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
+            "Authorization": `Bearer ${token}`,
           },
           body: JSON.stringify(data),
         }
@@ -81,6 +87,8 @@ export const postUser = createAsyncThunk(
         "There was a problem with the POST request:",
         error.message
       );
+      Notiflix.Notify.failure("There was a problem posting user data.");
+    throw error;
     }
   }
 );

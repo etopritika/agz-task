@@ -9,10 +9,17 @@
   border-radius: 80px;
   border: none;
   cursor: pointer;
-  transition: background-color $tr-delay $tr-timing-func, transform $tr-delay $tr-timing-func;
-}
-
-.main_button:hover, .main_button:focus, .main_button:active {
-  background-color: $hovel-col;
-  transform: $transition;
+  transition: background-color $tr-delay $tr-timing-func,
+    transform $tr-delay $tr-timing-func;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $hovel-col;
+    transform: $transition;
+  }
+  &:disabled {
+    color: $white-col;
+    background-color: #b4b4b4;
+    pointer-events: none;
+  }
 }

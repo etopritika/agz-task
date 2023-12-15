@@ -4,13 +4,14 @@ import RadioButtons from "./components/RadioButtons";
 import FileUpload from "./components/FileUpload";
 import Button from "../Buttons/Button";
 import { useDispatch, useSelector } from "react-redux";
-import { postUser, getToken } from "../../redux/userOperations";
-import { selectPositions } from "../../redux/selectors";
+import { postUser } from "../../redux/userOperations";
+import { selectPositions, selectIsLoading } from "../../redux/selectors";
 import styles from "./Make-Post.module.scss";
 
 function MakePost() {
   const dispatch = useDispatch();
   const positions = useSelector(selectPositions);
+  const isLoading = useSelector(selectIsLoading);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -23,7 +24,6 @@ function MakePost() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await dispatch(getToken());
     await dispatch(postUser(formData));
   };
 
@@ -45,14 +45,24 @@ function MakePost() {
     }
   };
 
+  const isButtonDisabled =
+    !formData.name ||
+    !formData.email ||
+    !formData.phone ||
+    !formData.position ||
+    !formData.photo ||
+    isLoading;
+
   return (
     <section className={`container ${styles.wrapper}`}>
       <h2 className={styles.title}>Working with POST request</h2>
       <form
+        className={styles.form_wrapper}
         onSubmit={handleSubmit}
         action="/submit"
         method="post"
         encType="multipart/form-data"
+        id="signup"
       >
         <InputField
           placeholder="Your name"
@@ -102,7 +112,7 @@ function MakePost() {
           required
           onChange={handleChange}
         />
-        <Button text={"Sign up"} type={"submit"} />
+        <Button text={"Sign up"} type={"submit"} disabled={isButtonDisabled}/>
       </form>
     </section>
   );
