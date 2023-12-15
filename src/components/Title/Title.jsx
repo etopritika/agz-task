@@ -4,7 +4,7 @@ import styles from "./Title.module.scss";
 function Title() {
   return (
     <section className={styles.wrapper}>
-      <div className="container">
+      <div className={`container ${styles.title_container}`}>
         <h1 className={styles.title}>
           Test assignment for front-end developer
         </h1>

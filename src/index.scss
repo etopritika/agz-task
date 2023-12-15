@@ -27,9 +27,13 @@ code {
     monospace;
 }
 
-.p{
+p{
   font-size: $base-fs;
   line-height: $base-lh;
+}
+
+li {
+  list-style: none;
 }
 
 .container {

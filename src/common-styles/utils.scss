@@ -17,3 +17,12 @@ $bg-col: #F8F8F8;
 $error-col: #CB3D40;
 //Text color
 $text-col: rgba(0, 0, 0, 0.87);
+//White color
+$white-col: #FFF;
+//Hover color
+$hovel-col: #FFE302;
+
+//Transitions
+$tr-timing-func: cubic-bezier(0, 0.11, 0.35, 2);
+$tr-delay: 150ms;
+$transition: scale(0.9);

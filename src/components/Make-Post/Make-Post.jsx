@@ -6,11 +6,11 @@ import Button from "../Buttons/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { postUser, getToken } from "../../redux/userOperations";
 import { selectPositions } from "../../redux/selectors";
-
+import styles from "./Make-Post.module.scss";
 
 function MakePost() {
   const dispatch = useDispatch();
-  const positions = useSelector(selectPositions)
+  const positions = useSelector(selectPositions);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -23,13 +23,13 @@ function MakePost() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await dispatch(getToken())
+    await dispatch(getToken());
     await dispatch(postUser(formData));
   };
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     const { name, value, files } = e.target;
-  
+
     if (name === "position") {
       const [position_id, position] = value.split(",");
       setFormData((prevData) => ({
@@ -46,8 +46,8 @@ function MakePost() {
   };
 
   return (
-    <section>
-      <h2>Working with POST request</h2>
+    <section className={`container ${styles.wrapper}`}>
+      <h2 className={styles.title}>Working with POST request</h2>
       <form
         onSubmit={handleSubmit}
         action="/submit"
@@ -95,7 +95,7 @@ function MakePost() {
           onChange={handleChange}
         />
         <FileUpload
-          label="Додати фото:"
+          label="Upload your photo"
           id="photo"
           name="photo"
           accept=".jpg,.jpeg"

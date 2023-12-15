@@ -6,6 +6,7 @@ import { selectUsers, selectPage, selectTotalPages } from "../../redux/selectors
 import { useDispatch } from "react-redux";
 import { paginatePage } from "../../redux/userSlice";
 import { getUsers } from "../../redux/userOperations";
+import styles from "./Get-List.module.scss"
 
 function GetList() {
   const dispatch = useDispatch();
@@ -14,19 +15,16 @@ function GetList() {
   const totalPages = useSelector(selectTotalPages);
 
   const loadMore = () => {
-    // if(page === totalPages){
-    //   return;
-    // }
     dispatch(paginatePage(page + 1));
     dispatch(getUsers(page + 1));
   };
 
   return (
-    <section>
-      <h2>Working with GET request</h2>
-      <ul>
+    <section className={`container ${styles.wrapper}`}>
+      <h2 className={styles.title}>Working with GET request</h2>
+      <ul className={styles.user_list}>
         {allUsers.map((user) => (
-          <li key={user.id}>
+          <li key={user.id} className={styles.card}>
             <GetCard
               name={user.name}
               position={user.position}

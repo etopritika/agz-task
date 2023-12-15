@@ -84,26 +84,3 @@ export const postUser = createAsyncThunk(
     }
   }
 );
-
-// export const postUser = async (userData, token) => {
-//   try {
-//     const response = await fetch('https://frontend-test-assignment-api.abz.agency/api/v1/users', {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json',
-//         'Authorization': `Bearer ${token}`,
-//       },
-//       body: JSON.stringify(userData),
-//     });
-
-//     if (!response.ok) {
-//       throw new Error('Network response was not ok');
-//     }
-
-//     const responseData = await response.json();
-//     return responseData;
-//   } catch (error) {
-//     console.error('There was a problem with the POST request:', error.message);
-//     return null;
-//   }
-// }

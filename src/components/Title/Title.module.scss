@@ -1,11 +1,40 @@
-.wrapper{
-    background-image: url("../../images/title.jpg");
+@import "../../common-styles/utils.scss";
+
+.wrapper {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../../images/title.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-top: 40px;
+  padding-bottom: 71px;
+  @media (min-width: 768px) {
+    padding-top: 89px;
+    padding-bottom: 88px;
+  }
+  @media (min-width: 1024px) {
+    padding-top: 164px;
+    padding-bottom: 163px;
+  }
 }
 
-// .title{
+.title_container {
+  @media (min-width: 768px) {
+    max-width: 380px;
+    padding: 0;
+  }
+}
 
-// }
+.title {
+  font-size: $big-fs;
+  font-weight: 400;
+  line-height: $big-lh;
+  color: $white-col;
+  margin-bottom: 21px;
+}
 
-// .text{
-
-// }
+.text {
+  font-weight: 400;
+  color: $white-col;
+  margin-bottom: 32px;
+}

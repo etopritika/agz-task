@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./InputField.module.scss";
 
 function InputField({
   id,
@@ -16,10 +17,10 @@ function InputField({
   const label = name === "phone" ? "+38 (XXX) XXX - XX - XX" : "";
 
   return (
-    <div>
+    <div className={styles.wrapper}>
       <label>
-        {label && <span>{label}</span>}
         <input
+          className={styles.input_wrapper}
           type={type}
           id={id}
           name={name}
@@ -32,6 +33,7 @@ function InputField({
           maxLength={maxLength}
           pattern={pattern}
         />
+        {label && <span className={styles.phone}>{label}</span>}
       </label>
     </div>
   );
