@@ -3,12 +3,14 @@ import InputField from "./components/InputField";
 import RadioButtons from "./components/RadioButtons";
 import FileUpload from "./components/FileUpload";
 import Button from "../Buttons/Button";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { postUser, getToken } from "../../redux/userOperations";
+import { selectPositions } from "../../redux/selectors";
 
 
 function MakePost() {
   const dispatch = useDispatch();
+  const positions = useSelector(selectPositions)
 
   const [formData, setFormData] = useState({
     name: "",
@@ -25,9 +27,9 @@ function MakePost() {
     await dispatch(postUser(formData));
   };
 
-  const handleChange = (e) => {
+  const handleChange = e => {
     const { name, value, files } = e.target;
-
+  
     if (name === "position") {
       const [position_id, position] = value.split(",");
       setFormData((prevData) => ({
@@ -88,12 +90,7 @@ function MakePost() {
         <RadioButtons
           label="Select your position"
           name="position"
-          options={[
-            { value: [1, "Frontend developer"], label: "Frontend developer" },
-            { value: [2, "Backend developer"], label: "Backend developer" },
-            { value: [3, "Designer"], label: "Designer" },
-            { value: [4, "QA"], label: "QA" },
-          ]}
+          options={positions}
           value={formData.position}
           onChange={handleChange}
         />

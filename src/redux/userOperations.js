@@ -5,7 +5,23 @@ const URL = "https://frontend-test-assignment-api.abz.agency/api/v1/";
 
 export const getUsers = createAsyncThunk("users/getUsers", async (page = 1) => {
   try {
-    const response = await fetch(`${URL}users?page=${page}&count=5`);
+    const response = await fetch(`${URL}users?page=${page}&count=6`);
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(
+      "There was a problem with the fetch operation:",
+      error.message
+    );
+  }
+});
+
+export const getPositions = createAsyncThunk("users/getPosition", async () => {
+  try {
+    const response = await fetch(`${URL}positions`);
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
@@ -28,7 +44,7 @@ export const getToken = createAsyncThunk("users/getToken", async () => {
       throw new Error("Network response was not ok");
     }
     const data = await response.json();
-    return data.token;
+    return data;
   } catch (error) {
     console.error(
       "There was a problem with the fetch operation:",
@@ -40,7 +56,7 @@ export const getToken = createAsyncThunk("users/getToken", async () => {
 
 export const postUser = createAsyncThunk(
   "users/postUser",
-  async (data, {getState}) => {
+  async (data, { getState }) => {
     const token = selectToken(getState());
 
     try {
@@ -50,7 +66,7 @@ export const postUser = createAsyncThunk(
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${token}`,
+            Authorization: `Bearer ${token}`,
           },
           body: JSON.stringify(data),
         }
