@@ -5,6 +5,9 @@
   @media (min-width: 768px) {
     justify-content: space-between;
   }
+  @media (max-width: 360px) {
+    justify-content: space-between;
+  }
 }
 
 .logo {
@@ -17,12 +20,22 @@
   }
 }
 
-.nav a:first-child {
-  margin-right: 10px;
+.nav {
+  @media (max-width: 360px) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
-.nav a:first-child button{
+.nav a:first-child {
+  margin-right: 10px;
+  @media (max-width: 360px) {
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+}
+
+.nav a:first-child button {
   padding-right: 29px;
   padding-left: 29px;
 }
-
