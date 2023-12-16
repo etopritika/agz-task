@@ -1,31 +1,50 @@
 @import "../../../common-styles/utils.scss";
 
-.wrapper{
-    text-align: start;
+.wrapper {
+  text-align: start;
 }
 
 .radio_wrapper {
-    display: flex;
-    flex-direction: column;
-    margin-top: 11px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 11px;
 }
 
 .label {
-    display: flex;
-    align-items: center;
-    font-size: $base-fs;
-    font-weight: 400;
-    line-height: $base-lh;
-    margin-bottom: 7px;
-    cursor: pointer;
-    &:last-child{
-        margin-bottom: 0;
-    }
+  display: flex;
+  align-items: center;
+  font-size: $base-fs;
+  font-weight: 400;
+  line-height: $base-lh;
+  margin-bottom: 7px;
+  cursor: pointer;
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
-.input {
-    margin-right: 12px;
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
+input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+  opacity: 0;
+
+  &:checked + .checkbox__icon {
+    opacity: 0;
+  }
+  &:checked ~ .icon__checked {
+    opacity: 1;
+  }
+}
+
+.checkbox__icon {
+  position: relative;
+  margin-right: 8.38px;
+  opacity: 1;
+}
+
+.icon__checked {
+  position: absolute;
+  opacity: 0;
 }

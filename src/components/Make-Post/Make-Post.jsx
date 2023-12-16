@@ -28,7 +28,7 @@ function MakePost() {
   };
 
   const handleChange = (e) => {
-    const { name, value, files } = e.target;
+    const { name, value } = e.target;
 
     if (name === "position") {
       const [position_id, position] = value.split(",");
@@ -40,11 +40,18 @@ function MakePost() {
     } else {
       setFormData((prevData) => ({
         ...prevData,
-        [name]: name === "photo" ? files[0] : value,
+        [name]: value,
       }));
     }
   };
 
+  const handleFile = (file = {}) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      photo: file[0],
+    }));
+  }
+  
   const isButtonDisabled =
     !formData.name ||
     !formData.email ||
@@ -105,12 +112,7 @@ function MakePost() {
           onChange={handleChange}
         />
         <FileUpload
-          label="Upload your photo"
-          id="photo"
-          name="photo"
-          accept=".jpg,.jpeg"
-          required
-          onChange={handleChange}
+          onChange={handleFile}
         />
         <Button text={"Sign up"} type={"submit"} disabled={isButtonDisabled}/>
       </form>
