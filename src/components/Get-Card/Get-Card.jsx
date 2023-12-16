@@ -13,7 +13,7 @@ function GetCard({
       <img loading="lazy" className={styles.picture} src={photo} width={70} height={70} alt="Employee" />
       <h3 className={styles.name}>{name}</h3>
       <p>{position}</p>
-      <p>{email}</p>
+      <p className={styles.email}>{email}</p>
       <p>{phone}</p>
     </>
   );

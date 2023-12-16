@@ -9,4 +9,17 @@
   font-size: $base-fs;
   font-weight: 400;
   line-height: $base-lh;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  &:hover {
+    overflow: visible;
+  }
+}
+
+.email{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  &:hover {
+    overflow: visible;
+  }
 }
