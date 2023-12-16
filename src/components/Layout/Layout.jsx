@@ -6,8 +6,8 @@ function Layout() {
   return (
     <main>
       <Title />
-      <GetList/>
-      <MakePost/>
+      <GetList />
+      <MakePost />
     </main>
   );
 }

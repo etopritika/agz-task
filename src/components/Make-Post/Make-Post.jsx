@@ -50,8 +50,8 @@ function MakePost() {
       ...prevData,
       photo: file[0],
     }));
-  }
-  
+  };
+
   const isButtonDisabled =
     !formData.name ||
     !formData.email ||
@@ -111,10 +111,8 @@ function MakePost() {
           value={formData.position}
           onChange={handleChange}
         />
-        <FileUpload
-          onChange={handleFile}
-        />
-        <Button text={"Sign up"} type={"submit"} disabled={isButtonDisabled}/>
+        <FileUpload onChange={handleFile} />
+        <Button text={"Sign up"} type={"submit"} disabled={isButtonDisabled} />
       </form>
     </section>
   );

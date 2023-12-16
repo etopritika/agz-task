@@ -19,7 +19,9 @@ function Title() {
     <section
       className={styles.wrapper}
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${loaded ? src : lowQuality})`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${
+          loaded ? src : lowQuality
+        })`,
       }}
     >
       <div className={`container ${styles.title_container}`}>

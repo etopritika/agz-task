@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import Notiflix from 'notiflix';
+import Notiflix from "notiflix";
 import { selectToken } from "./selectors";
 
 const URL = "https://frontend-test-assignment-api.abz.agency/api/v1/";
@@ -64,7 +64,7 @@ export const postUser = createAsyncThunk(
   "users/postUser",
   async (data, { getState }) => {
     const token = selectToken(getState());
-    
+
     try {
       const response = await fetch(
         "https://frontend-test-assignment-api.abz.agency/api/v1/users",
@@ -72,7 +72,7 @@ export const postUser = createAsyncThunk(
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${token}`,
+            Authorization: `Bearer ${token}`,
           },
           body: JSON.stringify(data),
         }
@@ -88,7 +88,7 @@ export const postUser = createAsyncThunk(
         error.message
       );
       Notiflix.Notify.failure("There was a problem posting user data.");
-    throw error;
+      throw error;
     }
   }
 );

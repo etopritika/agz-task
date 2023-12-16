@@ -28,7 +28,9 @@ function GetList() {
 
   return (
     <section className={`container ${styles.wrapper}`}>
-      <h2 className={styles.title} id="point">Working with GET request</h2>
+      <h2 className={styles.title} id="point">
+        Working with GET request
+      </h2>
       {isLoading ? (
         <Spinner />
       ) : (
@@ -47,7 +49,12 @@ function GetList() {
         </ul>
       )}
       {page !== totalPages && (
-        <Button text={"Show more"} type={"button"} onClick={loadMore} location={"#point"}/>
+        <Button
+          text={"Show more"}
+          type={"button"}
+          onClick={loadMore}
+          location={"#point"}
+        />
       )}
     </section>
   );

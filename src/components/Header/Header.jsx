@@ -11,8 +11,8 @@ function Header() {
         <img loading="lazy" src={Logo} width={104} height={26} alt="" />
       </Link>
       <nav className={styles.nav}>
-        <Button text={"Users"} type={"button"} location={"#users"}/>
-        <Button text={"Sign up"} type={"submit"} location={"#signup"}/>
+        <Button text={"Users"} type={"button"} location={"#users"} />
+        <Button text={"Sign up"} type={"submit"} location={"#signup"} />
       </nav>
     </header>
   );

@@ -18,8 +18,22 @@ function RadioButtons({ label, name, options, onChange, value }) {
               value={[option.id, option.name]}
               checked={value === option.name}
             />
-            <img loading="lazy" src={Unchecked} className={styles.checkbox__icon} width={20} height={20} alt="Unchecked" />
-            <img loading="lazy" src={Checked} className={styles.icon__checked} width={20} height={20} alt="Checked" />
+            <img
+              loading="lazy"
+              src={Unchecked}
+              className={styles.checkbox__icon}
+              width={20}
+              height={20}
+              alt="Unchecked"
+            />
+            <img
+              loading="lazy"
+              src={Checked}
+              className={styles.icon__checked}
+              width={20}
+              height={20}
+              alt="Checked"
+            />
             {option.name}
           </label>
         ))}

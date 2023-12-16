@@ -1,7 +1,7 @@
 @import "modern-normalize/modern-normalize.css";
 @import "./common-styles/utils.scss";
 
-*{
+* {
   margin: 0;
   padding: 0;
 }
@@ -28,7 +28,7 @@ code {
     monospace;
 }
 
-p{
+p {
   font-size: $base-fs;
   line-height: $base-lh;
 }
