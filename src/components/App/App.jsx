@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../Header/Header";
-import Layout from "../Layout/Layout";
+import Main from "../Main/Main";
 import { useDispatch } from "react-redux";
 import { getUsers, getPositions, getToken } from "../../redux/userOperations";
 
@@ -19,7 +19,7 @@ function App() {
   return (
     <>
       <Header />
-      <Layout />
+      <Main />
     </>
   );
 }
