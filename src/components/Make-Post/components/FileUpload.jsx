@@ -26,7 +26,7 @@ function FileUpload({ onChange }) {
 
   return (
     <div className={styles.wrapper}>
-      <label className={styles.label} {...getRootProps()}>
+      <label className={styles.label} {...getRootProps()} tabIndex="0" role="button" aria-label="Click to upload a photo">
         <input {...getInputProps()} />
         Upload
       </label>

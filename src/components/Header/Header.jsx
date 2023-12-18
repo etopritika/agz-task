@@ -7,7 +7,7 @@ import styles from "./Header.module.scss";
 function Header() {
   return (
     <header className={`container ${styles.header}`}>
-      <Link className={styles.logo} to="/">
+      <Link className={styles.logo} aria-label="Refresh the page" to="/">
         <img loading="lazy" src={Logo} width={104} height={26} alt="" />
       </Link>
       <nav className={styles.nav}>
